@@ -1,0 +1,67 @@
+* {
+    font-family: $font-family-base;
+}
+
+body, .App {
+    background: $col-gray-800;
+    color: $col-gray-100;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        .lg-left, .lg-right {
+            width: 49%;
+        }
+    }
+
+    p {
+        font-size: 12px;
+        font-weight: 400;
+        font-style: normal;
+        padding: 0;
+        margin: 0;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 14px;
+        }
+    }
+
+    h1 {
+        font-size: 38px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 48px;
+        }
+    }
+
+    h2 {
+        font-size: 20px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 24px;
+        }
+    }
+
+    h3 {
+        font-size: 16px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 18px;
+        }
+    }
+
+    h4 {
+        font-size: 14px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@import '~bootstrap/scss/bootstrap';
+@import "./_mixins";
+@import "./variables";
+@import "./main";
+
+// components style
+@import "./components/citySearch";
+@import "./components/currentWeatherCard";
+@import "./components/moreInfoCard";
+@import "./components/forecastCard";
+
+// common style
+@import "./common/dropdown";
