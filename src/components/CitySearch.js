@@ -1,4 +1,4 @@
-    import React, { useState } from 'react';
+    import React, { useState, useEffect, useRef } from 'react';
     import City from './CityList.js'
     import TemperatureToggle from './TemperatureToggle.js';
 
@@ -6,6 +6,14 @@
     const CitySearch = ({ onCitySelect }) => {
         const [search, setSearch] = useState('');
         const [suggestions, setSuggestions] = useState([]);
+        const suggestionRef = useRef(null);
+
+        useEffect(() => {
+            document.addEventListener('click', closeSuggestions);
+            return () => {
+              document.removeEventListener('click', closeSuggestions);
+            };
+        }, []);
 
         const searchSuggestions = (term) => {
             return City.filter(city =>
@@ -26,24 +34,21 @@
         };
 
         const handleKeyPress = (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                if (search.trim() !== '') {
-                    if (suggestions.length > 0) {
-                        handleCitySelect(suggestions[0]);
-                    } else {
-                        handleCitySelect(search.trim());
-                    }
-                }
+            if (e.key === 'Enter' && search.trim() !== '') {
+              e.preventDefault();
+              if (suggestions.length > 0) {
+                handleCitySelect(suggestions[0]);
+              } else {
+                handleCitySelect(search.trim());
+              }
             }
         };
 
         const closeSuggestions = (e) => {
-            if (e.target !== e.currentTarget) {
-                setSuggestions([]);
+            if (suggestionRef.current && !suggestionRef.current.contains(e.target)) {
+              setSuggestions([]);
             }
         };
-        document.addEventListener('click', closeSuggestions);
 
         return (
             <div className="city-search card">

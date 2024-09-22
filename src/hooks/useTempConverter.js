@@ -1,6 +1,6 @@
 import React from 'react';
 
-const useTemperatureConverter = (isCelsius, temp) => {
+const useTemperatureConverter = (isCelsius) => {
   const convertTemp = (temp) => {
     if (isCelsius) {
       return temp;

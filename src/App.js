@@ -11,17 +11,13 @@ import './scss/global.scss';
 const App = () => {
   const { weatherData, forecastData, error, loading, updateCity } = useWeather('New York');
 
-  const handleCitySelect = (selectedCity) => {
-    updateCity(selectedCity);
-  };
-
   if (error) return <ErrorMessage message={error} />;
 
   return (
     <TemperatureProvider>
       <div className="App container">
       <div className='lg-left'>
-        <CitySearch onCitySelect={handleCitySelect} />
+        <CitySearch onCitySelect={updateCity} />
         {loading ? (
             <p className='loading-text'>Loading...</p>
           ) : (

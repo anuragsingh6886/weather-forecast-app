@@ -5,21 +5,19 @@ import useTemperatureConverter from '../hooks/useTempConverter';
 const CurrentWeather = ({ data }) => {
 
     const { isCelsius } = useTemperature();
+    const { formatTemp } = useTemperatureConverter(isCelsius);
 
-    // Function to format the current time
+    if (!data) return null;
+
     const formatTime = (timestamp) => {
         const date = new Date(timestamp * 1000);
         return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     };
 
-
-    // Extract relevant data
     const { name, main, weather, sys } = data;
     const { temp, feels_like } = main;
     const { description, icon } = weather[0];
     const { country } = sys;
-
-    const { formatTemp } = useTemperatureConverter(isCelsius, temp);
 
     return (
         <div className="current-weather-card card">
