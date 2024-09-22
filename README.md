@@ -8,6 +8,7 @@ This React-based weather forecast application allows users to view current weath
 - Search functionality to find weather information for any city
 - 5-day weather forecast
 - Temperature unit conversion (Celsius/Fahrenheit)
+- Memoization to optimize API calls and prevent unnecessary re-renders
 - Responsive design for various screen sizes
 - Error handling for API calls and invalid inputs
 
