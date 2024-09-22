@@ -5,6 +5,7 @@ import { TemperatureProvider } from './TempratureContext';
 import CurrentWeather from './components/CurrentWeatherCard';
 import WeatherMoreInfo from './components/WeatherMoreInfo';
 import ForecastCard from './components/ForecastCard';
+import ErrorMessage from './components/ErrorPage';
 import './scss/global.scss';
 
 const App = () => {
@@ -14,19 +15,28 @@ const App = () => {
     updateCity(selectedCity);
   };
 
-  if (loading) return <div>Page is Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error) return <ErrorMessage message={error} />;
 
   return (
     <TemperatureProvider>
       <div className="App container">
       <div className='lg-left'>
         <CitySearch onCitySelect={handleCitySelect} />
-        <CurrentWeather data={weatherData} />
+        {loading ? (
+            <p className='loading-text'>Loading...</p>
+          ) : (
+            <CurrentWeather data={weatherData} />
+        )}
       </div>
       <div className='lg-right'>
-        <WeatherMoreInfo data={weatherData} />
-        <ForecastCard data={forecastData} />
+      {loading ? (
+            <p className='loading-text'>Loading...</p>
+          ) : (
+            <>
+              <WeatherMoreInfo data={weatherData} />
+              <ForecastCard data={forecastData}  />
+            </>
+         )}
       </div>
     </div>
     </TemperatureProvider>
@@ -34,7 +44,3 @@ const App = () => {
 }
 
 export default App;
-
-
-// VD Link Desktop = https://www.figma.com/design/Fg1zveVfFhT71zvSVTUoie/TypeWeather-(Community)?node-id=314-1304&node-type=frame&t=wM6PTCcOFN2UDB1Z-0
-// VD link Mobile & Tab = https://www.figma.com/design/Fg1zveVfFhT71zvSVTUoie/TypeWeather-(Community)?node-id=314-581&node-type=frame&t=wM6PTCcOFN2UDB1Z-0

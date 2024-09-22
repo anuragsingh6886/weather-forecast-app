@@ -38,6 +38,13 @@
             }
         };
 
+        const closeSuggestions = (e) => {
+            if (e.target !== e.currentTarget) {
+                setSuggestions([]);
+            }
+        };
+        document.addEventListener('click', closeSuggestions);
+
         return (
             <div className="city-search card">
                 <input

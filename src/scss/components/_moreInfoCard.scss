@@ -1,33 +1,33 @@
 .weather-more-info {
-    margin: 12px 0;
-    padding: 14px;
+    margin: rem(12) 0;
+    padding: rem(14);
     background: $col-gray-600;
     color: $col-gray-100;
 
     @include media-breakpoint-up(lg) {
-        height: 385px;
+        height: rem(385);
     }
 
     .weather-info-fields {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid $col-gray-800;
+        border-bottom: rem(1) solid $col-gray-800;
         width: 100%;
-        height: 56px;
+        height: rem(56);
 
         &:last-child {
             border-bottom: none;
         }
 
         @include media-breakpoint-up(lg) {
-            height: 76px;
+            height: rem(76);
         }
 
         .detail-text {
             display: flex;
             justify-content: space-between;
             width: 100%;
-            margin-left: 12px;
+            margin-left: rem(12);
             align-items: center;
 
             @include media-breakpoint-up(lg) {
