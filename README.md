@@ -56,5 +56,8 @@ The application uses SASS for styling, which is a CSS preprocessor. The main sty
 - VD Link Desktop = `https://www.figma.com/design/Fg1zveVfFhT71zvSVTUoie/TypeWeather-(Community)?node-id=314-1304&node-type=frame&t=wM6PTCcOFN2UDB1Z-0`
 - VD link Mobile & Tab = `https://www.figma.com/design/Fg1zveVfFhT71zvSVTUoie/TypeWeather-(Community)?node-id=314-581&node-type=frame&t=wM6PTCcOFN2UDB1Z-0`
 
+## Lighthouse Performace report
+![image](https://github.com/user-attachments/assets/1b30de47-01ff-411e-a1db-db2d28e216e0)
+
 ## License
 This project is open source and available under the [MIT License](LICENSE).
