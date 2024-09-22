@@ -11,6 +11,8 @@ This React-based weather forecast application allows users to view current weath
 - Responsive design for various screen sizes
 - Error handling for API calls and invalid inputs
 
+![image](https://github.com/user-attachments/assets/e95587d9-aaf6-40bf-bc58-5b5cbd102d4d)
+
 ## Requirements
 - Node.js (v14.0.0 or later)
 - npm (v6.0.0 or later)
@@ -50,8 +52,12 @@ This project uses the OpenWeatherMap API to fetch weather data. You need to sign
 ## Styling
 The application uses SASS for styling, which is a CSS preprocessor. The main styles are defined in `src/scss/global.scss`. The design is responsive and adapts to different screen sizes.
 
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+## Figma Visual Design (VD)
+- VD Link Desktop = `https://www.figma.com/design/Fg1zveVfFhT71zvSVTUoie/TypeWeather-(Community)?node-id=314-1304&node-type=frame&t=wM6PTCcOFN2UDB1Z-0`
+- VD link Mobile & Tab = `https://www.figma.com/design/Fg1zveVfFhT71zvSVTUoie/TypeWeather-(Community)?node-id=314-581&node-type=frame&t=wM6PTCcOFN2UDB1Z-0`
+
+## Lighthouse Performace report
+![image](https://github.com/user-attachments/assets/1b30de47-01ff-411e-a1db-db2d28e216e0)
 
 ## License
 This project is open source and available under the [MIT License](LICENSE).
